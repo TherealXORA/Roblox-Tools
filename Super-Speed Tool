@@ -20,7 +20,7 @@ Duration = 10;
 })
         game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
     else
-        togglesuperjspeed = true
+        togglesuperspeed = true
         local AkaliNotif = loadstring(game:HttpGet("https://raw.githubusercontent.com/Kinlei/Dynissimo/main/Scripts/AkaliNotif.lua"))();
 local Notify = AkaliNotif.Notify;
 Notify({
