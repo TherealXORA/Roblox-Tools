@@ -2,7 +2,7 @@ local AkaliNotif = loadstring(game:HttpGet("https://raw.githubusercontent.com/Ki
 local Notify = AkaliNotif.Notify;
 Notify({
 Description = "This Was Made By TheRealX_ORA on YT";
-Title = "C TOOl";
+Title = "C Tool";
 Duration = 10;
 });
 
