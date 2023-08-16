@@ -1,0 +1,52 @@
+local AkaliNotif = loadstring(game:HttpGet("https://raw.githubusercontent.com/Kinlei/Dynissimo/main/Scripts/AkaliNotif.lua"))();
+local Notify = AkaliNotif.Notify;
+Notify({
+Description = "This Script Was Made By TheRealX_ORA on YT";
+Title = "Super-Jump Tool";
+Duration = 3;
+})
+
+local togglesuperjump = true
+
+local function togglesuperjump()
+    if togglesuperjump == true then
+        togglesuperjump = false
+        local AkaliNotif = loadstring(game:HttpGet("https://raw.githubusercontent.com/Kinlei/Dynissimo/main/Scripts/AkaliNotif.lua"))();
+local Notify = AkaliNotif.Notify;
+Notify({
+Description = "";
+Title = "Super-Jump: Disabled";
+Duration = 3;
+})
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
+    else
+        togglesuperjump = true
+        local AkaliNotif = loadstring(game:HttpGet("https://raw.githubusercontent.com/Kinlei/Dynissimo/main/Scripts/AkaliNotif.lua"))();
+local Notify = AkaliNotif.Notify;
+Notify({
+Description = "";
+Title = "Super Jump: Enabled";
+Duration = 3;
+})
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = 250
+    end
+end
+
+tool = Instance.new("Tool")
+tool.RequiresHandle = false
+tool.Name = "Super-Jump Tool"
+tool.Activated:connect()
+
+tool.Parent = game.Players.LocalPlayer.Backpack
+
+local player = game.Players.LocalPlayer
+
+local function connectCharacterAdded(togglesuperjump)
+    player.CharacterAdded:Connect(onCharacterAdded)
+end
+
+connectCharacterAdded()
+
+player.CharacterRemoving:Connect(function()
+    tool.Parent = game.Players.LocalPlayer.Backpack
+end)
