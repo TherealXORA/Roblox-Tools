@@ -16,7 +16,7 @@ local Notify = AkaliNotif.Notify;
 Notify({
 Description = "";
 Title = "Super-Speed: Disabled";
-Duration = 10;
+Duration = 3;
 })
         game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
     else
@@ -26,7 +26,7 @@ local Notify = AkaliNotif.Notify;
 Notify({
 Description = "";
 Title = "Super-Speed: Enabled";
-Duration = 10;
+Duration = 3;
 })
         game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 350
     end
