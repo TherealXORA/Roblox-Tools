@@ -1,1 +1,51 @@
+local AkaliNotif = loadstring(game:HttpGet("https://raw.githubusercontent.com/Kinlei/Dynissimo/main/Scripts/AkaliNotif.lua"))();
+local Notify = AkaliNotif.Notify;
+Notify({
+Description = "This Script Was Made By TheRealXORA on YT";
+Title = "Super-Speed Tool";
+Duration = 3;
+});
 
+local togglesuperspeed = true
+
+local function togglesuperspeed()
+    if togglesuperspeed == true then
+        togglesuperspeed = false
+        local AkaliNotif = loadstring(game:HttpGet("https://raw.githubusercontent.com/Kinlei/Dynissimo/main/Scripts/AkaliNotif.lua"))();
+local Notify = AkaliNotif.Notify;
+Notify({
+Description = "";
+Title = "Super-Speed: Disabled";
+Duration = 10;
+})
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+    else
+        togglesuperspeed = true
+        local AkaliNotif = loadstring(game:HttpGet("https://raw.githubusercontent.com/Kinlei/Dynissimo/main/Scripts/AkaliNotif.lua"))();
+local Notify = AkaliNotif.Notify;
+Notify({
+Description = "";
+Title = "Super-Speed: Enabled";
+Duration = 10;
+})
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 350
+    end
+end
+
+tool = Instance.new("Tool")
+tool.RequiresHandle = false
+tool.Name = "Super-Speed"
+tool.Activated:connect(togglesuperspeed)
+tool.Parent = game.Players.LocalPlayer.Backpack
+
+local player = game.Players.LocalPlayer
+
+local function connectCharacterAdded()
+    player.CharacterAdded:Connect(onCharacterAdded)
+end
+
+connectCharacterAdded()
+
+player.CharacterRemoving:Connect(function()
+    tool.Parent = game.Players.LocalPlayer.Backpack
+end)
